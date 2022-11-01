@@ -3,8 +3,8 @@ name: Build
 on: [push]
 
 env:
-  TOOLCHAIN: proton
-  INSTALLER: no
+  TOOLCHAIN: cruel
+  INSTALLER: yes
 
 jobs:
   build:
