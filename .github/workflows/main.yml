@@ -64,7 +64,6 @@ jobs:
                        +cifs                     \
                        +sdfat                    \
                        +ntfs                     \
-                       +morosound                \
                        +boeffla_wl_blocker       \
                        +50hz \
           2>&1 | tee config.info
