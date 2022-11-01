@@ -3,7 +3,7 @@ name: Build
 on: [push]
 
 env:
-  TOOLCHAIN: cruel
+  TOOLCHAIN: proton
   INSTALLER: yes
 
 jobs:
@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        model: [ "G970F,G973F,G975F", "N970F,N975F" ]
+        model: [ "G970F,G970N" ]
 
     steps:
       - uses: actions/checkout@v2
@@ -55,7 +55,7 @@ jobs:
           set -e -o pipefail
           ./cruelbuild config                    \
                        model=${{ matrix.model }} \
-                       name="Cruel-devel"        \
+                       name="NevaCore-Nightly[beyond0]"        \
                        toolchain=$TOOLCHAIN      \
                        +magisk                   \
                        +nohardening              \
@@ -64,7 +64,6 @@ jobs:
                        +cifs                     \
                        +sdfat                    \
                        +ntfs                     \
-                       +force_dex_wqhd           \
                        +morosound                \
                        +boeffla_wl_blocker       \
           2>&1 | tee config.info
