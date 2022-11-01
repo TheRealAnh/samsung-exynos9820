@@ -4,7 +4,7 @@ on: [push]
 
 env:
   TOOLCHAIN: proton
-  INSTALLER: yes
+  INSTALLER: no
 
 jobs:
   build:
